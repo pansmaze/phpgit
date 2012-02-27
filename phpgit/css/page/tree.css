@@ -1,0 +1,65 @@
+.treeTable {
+  width: 952px;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0px;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+}
+.treeTable a {
+  text-decoration: none;
+  color: #5e90da;
+}
+.treeTable a:hover {
+  text-decoration: underline;
+  color: #FF6600;
+}
+.treeTable tr {
+  height: 28px;
+  line-height: 28px;
+}
+.treeTable thead tr {
+  background-color: #fafafa;
+  color: #808080;
+}
+.treeTable thead tr th {
+  border-bottom: 1px solid #cccccc;
+}
+.treeTable .history {
+  float: right;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.treeTable .blob_link {
+  padding-left: 25px;
+  background: url(../../images/icon.png) 0px 2px  no-repeat;
+}
+.treeTable .image_link {
+  padding-left: 25px;
+  background: url(../../images/icon.png) 0px -36px no-repeat;
+}
+.treeTable .tree_link {
+  padding-left: 25px;
+  background: url(../../images/icon.png) 0px -17px no-repeat;
+}
+.treeTable .tree_link,
+.treeTable .image_link,
+.treeTable .blob_link {
+  line-height: 20px;
+  height: 20px;
+  display: inline-block;
+} 
+.treeTable .parent_path_link {
+  padding: 0px 20px;
+} 
+.treeTable .snapshotTip {
+  float: right;
+}
+
+.treeTable .author_name {
+  margin-right: 5px;
+  color: #828282;
+}
+.treeTable a.history_link {
+  color: #414141;
+}

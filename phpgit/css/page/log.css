@@ -1,0 +1,158 @@
+input[type=button] {
+  cursor: pointer;
+}
+input[type=checkbox] {
+  position: absolute;
+  margin-top: 5px;
+}
+div.log_body {
+  border: 1px solid #d8d8d8;
+  border-top: none; 
+  
+}
+.commit_box {
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.commit_box_title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #f0f0f0;
+  padding-left: 10px;
+  height: 28px;
+  line-height: 28px;
+  color: #808080;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+div.commit_record {
+  position: relative;
+  padding: 10px;
+}
+div.commit_record.dark {
+  background-color: #f9f9f9;
+}
+div.commit_record:hover {
+  background-color: #fefde8;
+}
+.commit_record .commit_title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #404040;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.commit_record .author_info {
+  color: #999999;
+}
+
+.commit_record .show_comment {
+  background: url(../../images/+.png) 2px 2px no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.commit_record .show_comment.expanded {
+  background: url(../../images/_.png) 2px 2px no-repeat;
+}
+.commit_record .comment {
+  display: none;
+}
+div.ctrl_pane {
+  right: 0;
+  position: absolute;
+  padding-right: 10px;
+}
+div.ctrl_pane .select_to_compare {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 7px;
+  padding-left: 20px;
+  min-height: 20px;
+  /*background: url(../../images/commit_icons.png) -1px -73px no-repeat;*/
+  padding-top: 3px;
+  position: relative;
+  z-index: 2;
+}
+div.ctrl_pane a{
+  padding-left: 5px;
+}
+div.ctrl_pane .select_to_compare.selected {
+/*  background-position: -1px -108px;*/
+}
+div.ctrl_pane .select_to_compare.disabled {
+  color: #999999;
+}
+.light div.ctrl_pane .select_to_compare.disabled {
+  background-color: #ffffff;
+  background-color: transparent !important;
+}
+.dark div.ctrl_pane .select_to_compare.disabled {
+  background-color: #f9f9f9;
+  background-color: transparent !important;
+}
+.force_hlight {
+  background-color: transparent !important;
+}
+div.diff_commit_container {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+#diff_commit_button {
+  float: right;
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #404040;
+  text-align: center;
+  padding: 0px 0px 2px 2px;
+  margin: 5px 0px 0px 0px;
+  display: inline-block;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fbfbfb, endColorstr=#f2f2f2, gradientType=0);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fbfbfb, #f2f2f2);
+}
+#diff_commit_button.disabled {
+  background: none;
+  filter: none;
+  background-color: #fafafa;
+  color: #999999;
+}
+div.more_commit_container {
+  text-align: center;
+}
+#show_commit_button {
+  width: 230px;
+  height: 30px;
+  display: inline-block;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fbfbfb, endColorstr=#f2f2f2, gradientType=0);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fbfbfb, #f2f2f2);
+  padding: 0px 0px 2px 2px;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #404040;
+  text-align: center;
+
+}
+#show_commit_button.disabled {
+  background: none;
+  filter: none;
+  background-color: #fafafa;
+  color: #999999;
+}
+
+div.container {
+  padding-bottom: 50px;
+}
+span.refs {
+  float: none;
+}

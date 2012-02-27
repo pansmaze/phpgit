@@ -1,0 +1,233 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+div.wrapper {
+  overflow: hidden;
+}
+div.project_list {
+  float: left;
+}
+div.related_info {
+  margin-top: 8px;
+  width: 298px;
+  overflow: hidden;
+  float: left;
+}
+div.related_info .separator {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#A9A9A9, endColorstr=#ffffff, gradientType=1);
+  background: -webkit-gradient(linear, left top, right bottom, from(#A9A9A9), to(#ffffff));
+  background: -moz-linear-gradient(left, #A9A9A9, #ffffff);
+  height: 1px;
+  width: 166px;
+  margin: -35px 0px 35px 6px;
+}
+div.related_info h6 {
+  color: #404040;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0px 0px 25px 0px;
+}
+div.related_info li {
+  padding-left: 6px;
+  margin: 10px 0px;
+}
+div.related_info .git_support,
+div.related_info .git_doc {
+  margin-bottom: 70px;
+}
+div.related_info a {
+  color: #4E86A0;
+}
+.shade{
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffafafb, endColorstr=#fff0efef);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafb), to(#f0efef));
+  background: -moz-linear-gradient(top, #fafafb, #f0efef);
+}
+.radius_box {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.guide,
+.project {
+  width: 600px;
+}
+.guide {
+  height: 78px;
+  margin: 30px;
+  margin-top: 0px;
+  padding-top: 10px;
+  background-color: #FAFAFA;
+  text-align: center;
+}
+.guide .warehouse_num {
+  color: #404040;
+  font-weight: bold;
+  display: block;
+  height: 14px;
+  padding-left: 10px;
+  text-align: left;
+}
+.guide .clearSearch,
+.guide .searchSpinner {
+  position: absolute;
+  display: block;
+}
+.guide .clearSearch {
+  right: 10px;
+  top: 14px;
+}
+.guide .searchSpinner {
+  left: 77px;
+  top: 38px;
+}
+#projectSearchForm {
+  position: relative;
+  padding-top: 10px;
+  margin: 0px 11px 0px 10px;
+}
+#projectSearchForm .search_hint {
+  position: absolute;
+  color: #CCCCCC;
+  top: 13px;
+  left: 15px;
+  display: block;
+  height: 18px;
+  line-height: 18px;
+}
+#search_input {
+  width: 100%;
+  text-indent: 15px;
+  height: 20px;
+  box-shadow: 0 1px 2px #CCCCCC inset;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+}
+.guide_bar {
+  margin: 0px 0px 0px 10px;
+  padding: 7px 0px 0px 10px;
+  position: relative;
+}
+.guide_bar li {
+  list-style: none;
+  float: right;
+  cursor: pointer;
+  margin-right: 15px;
+  height: 20px;
+  line-height: 20px;
+}
+.guide_bar li a {
+  color: #000000;
+  text-decoration: none;
+}
+.guide_bar li a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+#active_offset {
+  background-color: #999999;
+  height: 3px;
+  display: block;
+  position: absolute;
+  width: 50px;
+  top: 27px;
+  left: 9px;
+}
+#all_category {
+  margin-right: 70px;
+  float: left;
+}
+.project {
+  margin: 0px 30px 30px 30px;
+  position: relative; 
+}
+.project h2,
+.project p {
+  padding: 0px 15px 0px 10px;
+}
+.project h2 {
+  margin: 10px 0px;
+}
+.project h3 {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.project .pname {
+  color: #4183C4;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+.last_change,
+.project .owner {
+  display: block;
+  color: #999999;
+  text-align: right;
+  margin-top: 12px;
+}
+.project .description {
+  color: #404040;
+  padding-left: 10px;
+  max-width: 300px;
+  min-height: 17px;
+  margin-bottom: 10px;
+}
+.project-url {
+  border-top: 1px solid #EBEBEB;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+.project-url .readonly_url,
+.project-url .writeable_url {
+  width: 66px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #808080;
+  border-right: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffffff, endColorstr=#fff3f3f3);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3));
+  background: -moz-linear-gradient(top, #ffffff, #f3f3f3);
+  cursor: pointer;
+}
+.project-url .url_displayer {
+  float: left;
+  display: inline-block;
+  height: 22px;
+  color: #B4B4B4;
+  box-shadow: 0 1px 2px #CCCCCC inset;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  width: 435px;
+  text-indent: 5px;
+}
+.project-url .demo_url {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #4E86A0;
+  height: 25px;
+  text-decoration: underline;
+}
+.project-url p {
+  overflow: hidden;
+}
+.project-url .clicked {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff3f3f3, endColorstr=#ffffffff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#ffffff));
+  background: -moz-linear-gradient(top, #f3f3f3, #ffffff);
+}
+a:hover {
+  color: #FCA65A !important;
+}
