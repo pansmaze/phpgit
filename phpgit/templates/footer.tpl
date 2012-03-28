@@ -20,15 +20,9 @@
         <a href="{$SCRIPT_NAME}?a=opml" class="rss_logo">{t}OPML{/t}</a>
         <a href="{$SCRIPT_NAME}?a=project_index" class="rss_logo">{t}TXT{/t}</a>
       {/if}
-    </div>
-    <div class="attr_footer">
-    	<a href="http://ued.etao.com" target="_blank">Etao UED</a>
     </div>*}
       </div>
     </div>
-    <div class="page_footer">
-      <p>Powered by UX@etao</p>
-{*      <p>Copyright <a href="http://ued.etao.com" target="_blank">Etao UED</a> Team</p>*}
-    </div>
+	{php}include 'uxcommon/footer.php';{/php}
   </body>
 </html>

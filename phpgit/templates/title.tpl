@@ -20,7 +20,7 @@
 		{elseif $target == 'tree'}
 			<a href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree&amp;h={$titletree->GetHash()}&amp;hb={$titlecommit->GetHash()}{if $branch_name}&amp;bn={$branch_name}{/if}" class="title">{$titlecommit->GetTitle()|escape:'html'}</a>
 		{else}
-			<a href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=commit&amp;h={$titlecommit->GetHash()}{if $branch_name}&amp;bn={$branch_name}{/if}" class="title">{$titlecommit->GetTitle()|escape:'html'}</a>
+			<span class="title">{$titlecommit->GetTitle()|escape:'html'}</span>
 		{/if}
 		{if $diffpage}
 		<a class="view_tree_link" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree&amp;h={$tree->GetHash()}&amp;hb={$titlecommit->GetHash()}">{t}Tree{/t}</a>

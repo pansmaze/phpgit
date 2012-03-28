@@ -33,31 +33,29 @@ div.wrapper {
 div.container,
 div.header-inner {
   text-align: left;
-  width: 960px;
+  width: 990px;
   margin: 0 auto;
 }
 
-div.header-inner a.nav_option,
 div.header-inner span.nav_option {
 	color: #404040 !important;
-	text-shadow: 0px 1px 0px #a3a3a3;
+	text-shadow: 0px 1px 0px #ffffff;
 	display: inline-block;
 	position: relative;
-	line-height: 37px;
-	margin-top: -6px;
-	height: 37px;
-	padding: 0 13px;
+	line-height: 30px;
+	height: 30px;
+	padding: 2px 10px;
 	font-size: 20px;
 	cursor: pointer;
 	font-weight: bold;
 }
-div.header-inner span.nav_option {
-  	background-color: #fafafa;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	border: 1px solid #cdcdcd;
-	border-bottom: 1px solid #fafafa;
-	height: 38px;
+div.header-inner span.current {
+	background: -webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#F9F9F9));
+	background: -moz-linear-gradient(top, #e5e5e5, #f9f9f9);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5e5e5, endColorstr=#f9f9f9);
+	box-shadow: 1px 1px 4px #999 inset;
+	border: 1px solid #CDCDCD;
+	border-radius: 5px;
 }
 div.browser_wrapper {
   background-color: #EEEEEE;
@@ -67,7 +65,7 @@ div.browser_wrapper {
   margin-top: 5px;
 }
 div.browser {
-  width: 954px;
+  width: 982px;
   background-color: #FFFFFF;
   padding: 0;
   margin: 0px;
@@ -81,6 +79,11 @@ div.browser #blobData .ln {
 }
 div.browser #blobData td.de1 {
 	padding: 10px 5px;
+}
+div.browser #imageData {
+	text-align: center;
+	padding: 20px;
+	background: url(http://img01.taobaocdn.com/tps/i1/T18.1WXehuXXXXXXXX-16-16.gif) repeat 0 0 #fff;
 }
 a { 
 	color: #5e90da;
@@ -111,18 +114,27 @@ em {
 .fn {
 	font-weight: normal;
 	font-size: 12px;
+	border-radius: 10px;
+	background-color: #E5E5E5;
+	padding: 2px 6px;
 }
 /*
  * Page header
  * (topmost bar with project link, language bar, etc)
  */
 div.header-inner { 
-	font-size: 18px;
-	padding: 10px 0px;
-  position: relative;
+	position: relative;
 }
-div.header-inner a {
-	font-weight: bold; 
+div.header-inner .menulist {
+	margin: 0 0 0 100px;
+	padding: 5px 0 5px 20px;
+	border-left: 1px solid #CCC;
+	box-shadow: 1px 0 0 #fff inset;
+}
+div.header-inner .menulist li { 
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 div.page_header {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffcfcfc, endColorstr=#fff3f3f3); 
@@ -130,7 +142,6 @@ div.page_header {
 	background: -moz-linear-gradient(top, #fcfcfc, #f3f3f3);
 	border-bottom: 1px solid #cfcfcf;
 	margin-bottom: 1px;
-  height: 42px;
 }
 
 div.page_header a:visited, a.header { 
@@ -155,11 +166,15 @@ div.header-project_info {
 	border-bottom: 1px solid #cfcfcf;
 }
 div.header-project_info p {
-	font-size: 12px;
-	margin-top: 3px;
+	height: 25px;
+	margin: 5px 0;
 }
 div.header-project_info .header-inner {
-	padding: 12px 0px 70px 0px;
+	padding: 12px 0px 50px 0px;
+}
+.header-project_info .readonly_url{
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 .header-project_info .readonly_url,
 .header-project_info .writeable_url {
@@ -190,23 +205,25 @@ div.header-project_info .header-inner {
   text-indent: 5px;
 }
 .header-project_info .pname {
-	color: #404040;
-	text-shadow: 0px 1px 0px #9e9e9f;
+	font-weight: bold; 
+	font-size: 18px;
+	color: #4183C4;
+}
+
+.header-project_info .pname:hover {
+    text-decoration: none;
 }
 .header-project_info .description{
   font-size: 12px;
-  margin-top: 5px;
+  margin: 15px 0;
 }
 .header-project_info .demo_url {
   display: inline-block;
-  cursor: pointer;
-  height: 25px;
-  font-size: 12px;
   text-decoration: underline;
-  font-weight: normal;
 }
-.header-project_info .clicked {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff3f3f3, endColorstr=#ffffffff);
+.header-project_info label.clicked {
+	font-weight: bold;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f3f3f3f3, endColorstr=#ffffffff);
   background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#ffffff));
   background: -moz-linear-gradient(top, #f3f3f3, #ffffff);
 }
@@ -216,7 +233,7 @@ div.header-project_info .header-inner {
 div.page_nav { 
 	position: absolute;
 	margin-top: -48px;
-	width: 960px;
+	width: 990px;
 	height: 45px;
 	color: #808080;
 }
@@ -248,8 +265,8 @@ div.page_nav a:visited {
     text-decoration: none;
 }
 
-div.page_nav a:hover{
-    text-decoration: underline;
+div.page_nav a:hover {
+    text-decoration: none;
 }
 
 div.page_nav a.current,
@@ -322,8 +339,8 @@ div.page_footer {
   background-color: #FCFBFB;
   color: #808080;
   border-top: 1px solid #D7D7D7;
-  box-shadow: 0 1px 1px #D7D7D7 inset;
-	text-align: center;
+  box-shadow: 0 2px 1px #D7D7D7 inset;
+  text-align: center;
 }
 /*
  * Attribution footer
@@ -483,6 +500,7 @@ img.logo {
  * (main header with commit message)
  */
 .ref_commit_title {
+	padding: 5px 7px;
 	color: #9a9a9a;
 }
 .ref_commit_title span {
@@ -507,7 +525,7 @@ div.title_text {
 	margin: 12px 0px;
 }
 
-div.title a.title {
+div.title span.title {
 	display: inline-block;
 	font-weight: bold;
 	color: #404040;
@@ -816,6 +834,12 @@ table.treeTable td.filesize {
 table.treeTable td.expander { 
 	/* the javascript tree expander cell */
 	padding-right: 0px; 
+}
+table.treeTable td.name { 
+	width: 200px;
+}
+table.treeTable td.update { 
+	width: 90px;
 }
 
 

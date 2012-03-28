@@ -32,7 +32,7 @@
 <div class="browser">
    {if $datatag}
      {* We're trying to display an image *}
-     <div>
+     <div id="imageData">
        <img src="data:{$mime};base64,{$data}" />
      </div>
    {elseif $geshi}
@@ -46,7 +46,7 @@
 <td class="ln">
 <pre class="de1">
 {foreach from=$bloblines item=line name=bloblines}
-<a id="l{$smarty.foreach.bloblines.iteration}" href="#1{$smarty.foreach.bloblines.iteration}" class="linenr">{$smarty.foreach.bloblines.iteration}</a>
+<span id="l{$smarty.foreach.bloblines.iteration}" class="linenr">{$smarty.foreach.bloblines.iteration}</span>
 {/foreach}
 </pre></td>
 <td class="de1">

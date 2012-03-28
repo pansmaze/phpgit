@@ -20,9 +20,11 @@ define('GITPHP_START_MEM', memory_get_usage());
  */
 define('GITPHP_BASEDIR', dirname(__FILE__) . '/');
 define('GITPHP_CONFIGDIR', GITPHP_BASEDIR . 'config/');
+define('GITPHP_LIBDIR', GITPHP_BASEDIR . 'lib/');
 define('GITPHP_INCLUDEDIR', GITPHP_BASEDIR . 'include/');
 define('GITPHP_GITOBJECTDIR', GITPHP_INCLUDEDIR . 'git/');
 define('GITPHP_CONTROLLERDIR', GITPHP_INCLUDEDIR . 'controller/');
+define('GITPHP_APPDIR', GITPHP_INCLUDEDIR . 'app/');
 define('GITPHP_CACHEDIR', GITPHP_INCLUDEDIR . 'cache/');
 define('GITPHP_LOCALEDIR', GITPHP_BASEDIR . 'locale/');
 
@@ -153,9 +155,21 @@ try {
 	} else {
 		GitPHP_ProjectList::Instantiate(GITPHP_CONFIGDIR . 'gitphp.conf.php', true);
 	}
+	
 
 	$controller = GitPHP_Controller::GetController((isset($_GET['a']) ? $_GET['a'] : null));
 	if ($controller) {
+		/*
+		 * if DataBase is needed
+		 */
+		if ($controller->DB)
+		{
+			if (file_exists(GITPHP_CONFIGDIR . 'db.conf.php')) {
+				require_once(GITPHP_CONFIGDIR . 'db.conf.php');
+				require_once(GITPHP_LIBDIR . 'db/mysql.php');
+				DB_MySQL::$DB_CONFIGS = $db_config; 
+			}
+		}
 		$controller->RenderHeaders();
 		$controller->Render();
 	}

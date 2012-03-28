@@ -57,6 +57,14 @@ abstract class GitPHP_ControllerBase
 	protected $headers = array();
 
 	/**
+	 * DB
+	 *
+	 * database is needed or not
+	 *
+	 *@access public
+	 */
+	public $DB = false;
+	/**
 	 * __construct
 	 *
 	 * Constructor

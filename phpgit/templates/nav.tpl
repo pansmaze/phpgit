@@ -34,16 +34,17 @@
    {/if}
  {/if}
 
-      {if $current=='tags'}
-        <a data-action="tags" class="nav_item fr clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tags{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tags{/t}&nbsp;<span class="fn">({$project->GetTags()|@count})</span></a>
-      {else}
-        <a class="nav_item fr" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tags{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tags{/t}&nbsp;<span class="fn">({$project->GetTags()|@count})</span></a>
-      {/if}
    {if $current=='heads'}
-        <a data-action="heads" class="nav_item clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=heads{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Branches{/t}&nbsp;<span class="fn">({$project->GetHeads()|@count})</span></a>
+        <a data-action="heads" class="nav_item clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=heads{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Branches{/t}&nbsp;<span class="fn">{$project->GetHeads()|@count}</span></a>
     {else}
-        <a class="nav_item" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=heads{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Branches{/t}&nbsp;<span class="fn">({$project->GetHeads()|@count})</span></a>
+        <a class="nav_item" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=heads{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Branches{/t}&nbsp;<span class="fn">{$project->GetHeads()|@count}</span></a>
     {/if}
+
+      {if $current=='tags'}
+        <a data-action="tags" class="nav_item fr clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tags{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tags{/t}&nbsp;<span class="fn">{$project->GetTags()|@count}</span></a>
+      {else}
+        <a class="nav_item fr" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tags{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tags{/t}&nbsp;<span class="fn">{$project->GetTags()|@count}</span></a>
+      {/if}
 
 
   {*if $current=='summary'}

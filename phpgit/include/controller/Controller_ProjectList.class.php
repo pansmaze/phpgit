@@ -170,6 +170,7 @@ class GitPHP_Controller_ProjectList extends GitPHP_ControllerBase
         }
         $this->tpl->assign('projectlist', $projectList);
         $this->tpl->assign('category_num', $category_num);
+        $this->tpl->assign('project_num', $projectList->Count());
         $this->tpl->assign('category', $temp_arr);
       }
 		}

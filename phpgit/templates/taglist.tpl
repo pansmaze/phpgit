@@ -9,7 +9,7 @@
  * @subpackage Template
  *}
 {assign var=tcount value=$taglist|@count}
-<div class="altogether_num">Altogether {$tcount} tag{if $tcount!=1&&$tcount!=0}s{/if}:</div>
+<div class="altogether_num">{$tcount} Tag{if $tcount!=1&&$tcount!=0}s{/if}:</div>
 
 {* <table cellspacing="0" class="tagTable">
    {foreach from=$taglist item=tag name=tag}

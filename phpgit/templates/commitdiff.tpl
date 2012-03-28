@@ -134,19 +134,7 @@
 			$(this).toggleClass("clicked");
 			$(this).parent().next().slideToggle(250);
 		});
-		$(".hint:first").parent().next().show();
-
-/*		$(".diff_info").mouseenter(function(){
-			$(this).find(".hint").fadeIn(50);
-		});
-		$(".diff_info").mouseleave(function(e){
-			if(!$(e.relatedTarget).hasClass("hint"))
-				$(this).children(".hint").fadeOut(50);
-		});
-		$(".hint").mouseleave(function(){
-			$(this).fadeOut(50);
-		});*/
-//		$(".diff_info").click(function(){			$(this).next().slideToggle(50);		});
+		$(".hint:first").addClass("clicked").parent().next().show();
 	});
 </script>
 {/literal}

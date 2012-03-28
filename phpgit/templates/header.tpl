@@ -5,9 +5,8 @@
  *
  *  Copyright (C) 2006 Christopher Han <xiphux@gmail.com>
  *}
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html>
   <!-- gitphp web interface {$version}, (C) 2006-2011 Christopher Han <xiphux@gmail.com> -->
   <head>
     <title>{$pagetitle}{if $project} :: {$project->GetProject()}{if $actionlocal}/{$actionlocal}{/if}{/if}</title>
@@ -74,9 +73,11 @@
     {$smarty.capture.header}
   </head>
   <body>
+{php}$current_selected_nav = 1; include 'uxcommon/header.php';{/php}
+{*
     <div class="page_header">
 	<div class="header-inner">
-      {*if $supportedlocales}
+      {if $supportedlocales}
       <div class="lang_select">
         <form action="{$SCRIPT_NAME}" method="get" id="frmLangSelect">
          <div>
@@ -119,17 +120,18 @@
             </div>
           </form>
         {/if}
-      {/if*}
-{*	<a href="index.php" class="nav_option">首页</a>*}
-	<a href="index.php"><span class="nav_option">代码仓库</span></a>
-{*	<a href="index.php" class="nav_option">WiKi沉淀</a>
-	<a href="index.php" class="nav_option">Demo平台</a>*}
+      {/if}
+	<img src="http://img03.taobaocdn.com/tps/i3/T1QhmZXh4dXXXXXXXX-98-45.png" style="float:left" />
+	<ul class="menulist">
+		<li><a href="index.php"><span class="nav_option current">代码仓库</span></a></li>
+	</ul>
     </div> 
-</div>
+  </div>
+*}
 {if $project}
 <div class="header-project_info">
 	<div class="header-inner">
-        	<a class="pname" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree">{$project->GetProject()}</a>
+        	<a href="index.php" class="pname">Home</a> / <a class="pname" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree">{$project->GetProject()}</a>
     		<div class="description">{$project->GetDescription()|escape:'html'}</div>
       		{if null !== $project->GetWebsite()}<a class="demo_url" href="{$project->GetWebsite()}">{$project->GetWebsite()}</a>{/if}
 		<p>
@@ -151,9 +153,6 @@
 </script>
 {/literal}
 
-{/if}
-{if $draw_shadow=='yes'}
-<div class="header_shadow"></div>
 {/if}
 	<div class="wrapper">
           <div class="container">

@@ -119,6 +119,11 @@ class GitPHP_Controller
 				$controller = new GitPHP_Controller_ProjectList();
 				$controller->SetParam('txt', true);
 				break;
+			case 'user':
+				require_once(GITPHP_CONTROLLERDIR . 'Controller_User.class.php');
+				$controller = new GitPHP_Controller_User();
+				$controller->DB = true;
+				break;
 			case 'opml':
 				require_once(GITPHP_CONTROLLERDIR . 'Controller_ProjectList.class.php');
 				$controller = new GitPHP_Controller_ProjectList();

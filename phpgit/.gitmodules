@@ -1,0 +1,3 @@
+[submodule "uxcommon"]
+	path = uxcommon
+	url = http://ued.etao.net/git/uxcommon.git

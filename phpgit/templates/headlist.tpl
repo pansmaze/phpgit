@@ -9,7 +9,7 @@
  * @subpackage Template
  *}
 {assign var=hcount value=$headlist|@count}
-<div class="altogether_num">{$hcount} branch{if $hount!=1}es{/if} is found</div>
+<div class="altogether_num">{$hcount} Branch{if $hount!=1}es{/if}</div>
 {* <table cellspacing="0">
    * Loop and display each head *
    {foreach from=$headlist item=head name=heads}

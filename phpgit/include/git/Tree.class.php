@@ -86,6 +86,7 @@ class GitPHP_Tree extends GitPHP_FilesystemObject
 	 */
 	public function SetContentsCommit()
 	{
+		$master_commit = $this->project->GetHeadCommit();
 		foreach ($this->contents as $i=>$content)
 		{
 			$content_history = $content->GetHistory();
@@ -93,7 +94,7 @@ class GitPHP_Tree extends GitPHP_FilesystemObject
 			if (!empty($content_history)){
 				$content->SetCommit($content_history->GetCommit());
 			}else{
-				$content->SetCommit($this->commit);
+				$content->SetCommit($master_commit);
 			}
 		}
 	}
