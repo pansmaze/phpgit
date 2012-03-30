@@ -19,9 +19,9 @@
     {/if}
 
    {if $current=='tree'}
-     <a data-action="tree" class="nav_item clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tree{/t}</a>
+     <a data-action="tree" class="nav_item clicked" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}{if $param_hb}&amp;hb={$param_hb}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tree{/t}</a>
    {else}
-     <a class="nav_item" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree{if $param_hb}&amp;hb={$param_hb}{/if}{if $tree}&amp;h={$tree->GetHash()}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tree{/t}</a>
+     <a class="nav_item" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}{if $param_hb}&amp;hb={$param_hb}{/if}{if $tree}&amp;h={$tree->GetHash()}{/if}{if $branch_name}&amp;bn={$branch_name}{/if}">{t}Tree{/t}</a>
    {/if}
   
  {if $bs_noneed} 

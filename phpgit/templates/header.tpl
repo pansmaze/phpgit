@@ -32,6 +32,7 @@
       <link rel="stylesheet" href="css/{$extracss_file}.css" type="text/css" />
       {/if}
     {/if}
+{php}include 'uxcommon/assets.php';{/php}
     {if $extracss}
     <style type="text/css">
     {$extracss}
@@ -49,19 +50,7 @@
       {/foreach}
       {rdelim}
     </script>
-    <link rel="stylesheet" href="css/ext/jquery.qtip.css" type="text/css" />
     <script type="text/javascript" src="js/ext/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/ext/jquery.qtip.min.js"></script>
-    {if file_exists('js/tooltips.min.js')}
-    <script type="text/javascript" src="js/tooltips.min.js"></script>
-    {else}
-    <script type="text/javascript" src="js/tooltips.js"></script>
-    {/if}
-    {if file_exists('js/lang.min.js')}
-    <script type="text/javascript" src="js/lang.min.js"></script>
-    {else}
-    <script type="text/javascript" src="js/lang.js"></script>
-    {/if}
     {foreach from=$extrascripts item=script}
     {if file_exists("js/$script.min.js")}
     <script type="text/javascript" src="js/{$script}.min.js"></script>
@@ -129,11 +118,11 @@
   </div>
 *}
 {if $project}
-<div class="header-project_info">
-	<div class="header-inner">
-        	<a href="index.php" class="pname">Home</a> / <a class="pname" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}&amp;a=tree">{$project->GetProject()}</a>
+<div class="project-info">
+	<div class="project-inner">
+        	<a href="./" class="pname">Home</a> / <a class="pname" href="{$SCRIPT_NAME}?p={$project->GetProject()|urlencode}">{$project->GetProject()}</a>
     		<div class="description">{$project->GetDescription()|escape:'html'}</div>
-      		{if null !== $project->GetWebsite()}<a class="demo_url" href="{$project->GetWebsite()}">{$project->GetWebsite()}</a>{/if}
+      		{if null !== $project->GetWebsite()}<a target="_blank" class="demo_url" href="{$project->GetWebsite()}">{$project->GetWebsite()}</a>{/if}
 		<p>
 		        <label class="readonly_url clicked" data-url="{$project->GetCloneUrl()}">只读地址</label>
 		        <label class="writeable_url" data-url="{$project->GetPushUrl()}">可写地址</label>

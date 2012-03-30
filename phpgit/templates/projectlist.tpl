@@ -32,31 +32,43 @@
         $("#projectSearchForm > .search_hint").show();
       }
     });
+    function showCate(cat){
+	cat = $(cat);
+	cat.siblings(".active").removeClass("active");
+	cat.addClass("active");
+	$("#active_offset").animate({
+	"left": (cat.position().left-1)+"px",
+	"width": (cat.width()+2)+"px"
+	},300);
+	var category = cat.attr("data-cate");
+	if ("" == category) {
+	    $(".project").fadeIn(300);
+	}else{
+	    $(".project").hide();
+	    $(".project[data-cate="+category+"]").fadeIn(300);
+	}
+    }
     $(".guide_bar > li").click(function () {
       if ($(this).hasClass("active")) {
         return false;
       }
-      $(this).siblings(".active").removeClass("active");
-      $(this).addClass("active");
-      var _active = $(this);
-      $("#active_offset").animate({
-        "left": (_active.position().left-1)+"px",
-        "width": (_active.width()+2)+"px"
-      },300);
-      var category = $(this).attr("data-cate");
-      if ("" == category) {
-        $(".project").fadeIn(300);
-      }else{
-        $(".project").hide();
-        $(".project[data-cate="+category+"]").fadeIn(300);
-      }
+      showCate(this);
+      window.location.hash = encodeURIComponent($(this).attr('data-cate'));
+    });
+    $(function(){
+	var hash = window.location.hash;
+        $('.guide_bar > li').each(function(i, li){
+	   if(hash == '#' +  encodeURIComponent($(li).attr('data-cate'))){
+	        showCate(li);
+	   }
+        });
     });
   </script>
   {/literal}
   {foreach name=projects from=$projectlist item=proj}
   <div class="project radius_box" data-cate="{$proj->GetCategory()}">
     <h2>
-      <a class="pname" href="{$SCRIPT_NAME}?p={$proj->GetProject()|urlencode}&amp;a=tree" title="{$proj->GetProject()}">{$proj->GetProject()}</a>
+      <a class="pname" href="{$SCRIPT_NAME}?p={$proj->GetProject()|urlencode}" title="{$proj->GetProject()}">{$proj->GetProject()}</a>
     </h2>
     <h3>
       <span class="owner">{t}Owner{/t}: {$proj->GetOwner()|escape:'html'}</span>
@@ -82,7 +94,7 @@
         <label class="writeable_url" data-url="{$proj->GetPushUrl()}">可写地址</label>
         <input type="text" class="url_displayer" readonly="readonly" value="{$proj->GetCloneUrl()}"/>
       </p>
-      {if null !== $proj->GetWebsite()}<a class="demo_url" href="{$proj->GetWebsite()}">{$proj->GetWebsite()}</a>{/if}
+      {if null !== $proj->GetWebsite()}<a class="demo_url" target="_blank" href="{$proj->GetWebsite()}">{$proj->GetWebsite()}</a>{/if}
     </div>
   </div>
   {foreachelse}
