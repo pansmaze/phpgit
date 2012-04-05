@@ -29,5 +29,5 @@ No file for this project
 <br />
 <br />
 {/if}
- {include file='footer.tpl'}
+{include file='footer.tpl'}
 

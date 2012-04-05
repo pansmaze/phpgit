@@ -60,6 +60,7 @@ div.related_info a {
   padding-top: 10px;
   background-color: #FAFAFA;
   text-align: center;
+  position: relative;
 }
 .guide .warehouse_num {
   color: #404040;

@@ -47,7 +47,7 @@ class GitPHP_Controller_ProjectList extends GitPHP_ControllerBase
 		} else if (isset($this->params['txt']) && ($this->params['txt'] === true)) {
 			return 'projectindex.tpl';
 		}
-    $this->tpl->assign('extracss_file', 'page/projectlist');
+		$this->tpl->assign('extracss_file', 'page/projectlist');
 		return 'projectlist.tpl';
 	}
 

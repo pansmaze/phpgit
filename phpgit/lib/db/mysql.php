@@ -205,6 +205,7 @@ class DB_MySQL {
 			throw new Exception("db.error invalid parameter");
 			return false;
 		} 
+		$value = $field = '';
 		while(list($key,$val) = each($dataArray)) { 
 			$field .= "$key,"; 
 			$value .= "'$val',"; 

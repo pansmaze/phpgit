@@ -61,29 +61,38 @@ class GitPHP_ProjectList
 	 * @param boolean $legacy true if this is the legacy project config
 	 * @throws Exception if there was an error reading the file
 	 */
-	public static function Instantiate($file = null, $legacy = false)
+	public static function Instantiate($file = null, $legacy = false, $fromdb = false)
 	{
 		if (self::$instance)
 			return;
 
-
-		if (!empty($file) && is_file($file) && include($file)) {
-			if (isset($git_projects)) {
-				if (is_string($git_projects)) {
-					if (function_exists('simplexml_load_file') && GitPHP_ProjectListScmManager::IsSCMManager($git_projects)) {
-						self::$instance = new GitPHP_ProjectListScmManager($git_projects);
-					} else {
-						self::$instance = new GitPHP_ProjectListFile($git_projects);
-					}
-				} else if (is_array($git_projects)) {
-					if ($legacy) {
-						self::$instance = new GitPHP_ProjectListArrayLegacy($git_projects);
-					} else {
-						self::$instance = new GitPHP_ProjectListArray($git_projects);
-					}
+		if ($fromdb)
+		{
+			require_once(GITPHP_MODELDIR . 'ProjectsExport.class.php');
+			$p_model = new ProjectsExport();
+			$git_projects = $p_model->fetch_projects_name_array();
+			$git_projects_settings = $p_model->fetch_projects_settings();
+			unset($p_model);
+			
+		} else if (!empty($file) && is_file($file)) {
+			include_once($file);
+		}
+		if (isset($git_projects)) {
+			if (is_string($git_projects)) {
+				if (function_exists('simplexml_load_file') && GitPHP_ProjectListScmManager::IsSCMManager($git_projects)) {
+					self::$instance = new GitPHP_ProjectListScmManager($git_projects);
+				} else {
+					self::$instance = new GitPHP_ProjectListFile($git_projects);
+				}
+			} else if (is_array($git_projects)) {
+				if ($legacy) {
+					self::$instance = new GitPHP_ProjectListArrayLegacy($git_projects);
+				} else {
+					self::$instance = new GitPHP_ProjectListArray($git_projects);
 				}
 			}
 		}
+
 
 		if (!self::$instance) {
 

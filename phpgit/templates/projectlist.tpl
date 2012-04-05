@@ -8,7 +8,7 @@
 {include file='header.tpl'}
 <div class="project_list">
   <div class="guide radius_box">
-    <label class="warehouse_num">{t}共有{/t}{$project_num}{t}个仓库{/t}</label>
+    <label class="warehouse_num">{t}共有{/t}{$project_num}{t}个仓库{/t}</label><a href="{$SCRIPT_NAME}?a=pconf" target="_blank" style="position:absolute;top:10px;left:100px;">仓库管理</a>
     <form method="get" action="index.php" id="projectSearchForm" enctype="application/x-www-form-urlencoded">
        <label class="search_hint" for="search_input">{t}Search projects{/t}...</label><input id="search_input" type="text" name="s" class="projectSearchBox" {if $search}value="{$search}"{/if} /> <a href="index.php" class="clearSearch" {if !$search}style="display: none;"{/if}>X</a> {if $javascript}<img src="images/search-loader.gif" class="searchSpinner" style="display: none;" />{/if}
     </form>
@@ -58,7 +58,7 @@
     $(function(){
 	var hash = window.location.hash;
         $('.guide_bar > li').each(function(i, li){
-	   if(hash == '#' +  encodeURIComponent($(li).attr('data-cate'))){
+	   if(hash == '#' +  encodeURIComponent($(li).attr('data-cate')) || hash == '#' + $(this).attr('data-cate')){
 	        showCate(li);
 	   }
         });

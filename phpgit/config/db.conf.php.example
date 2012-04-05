@@ -1,0 +1,25 @@
+<?php
+/**
+ * GitPHP Database Config file
+ *
+ * Copy this example file to config/db.conf.php
+ *
+ * @author Shiyan.zyj <shiyan.zyj@taobao.com>
+ * @copyright Copyright (c) 2012 Shiyan.zyj
+ * @package GitPHP
+ * @subpackage Config
+ */
+
+$gitphp_conf['db'] = array(
+	'dbname1' => array(
+		'host'  => '127.0.0.1',
+		'user'  => 'root',
+		'password'  => '123456',
+	),
+	'dbname2' => array(
+		'host'  => '127.0.0.1',
+		'user'  => 'root',
+		'password'  => '123456',
+	),
+
+);

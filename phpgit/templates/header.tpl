@@ -61,8 +61,8 @@
     {/if}
     {$smarty.capture.header}
   </head>
-  <body>
-{php}$current_selected_nav = 1; include 'uxcommon/header.php';{/php}
+  <body class="source">
+{php}include 'uxcommon/header.php';{/php}
 {*
     <div class="page_header">
 	<div class="header-inner">

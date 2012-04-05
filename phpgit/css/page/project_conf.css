@@ -1,0 +1,18 @@
+.input_form input[type=text] {
+	width: 300px;
+	margin-left: 10px;
+}
+.input_form select[name=charset] {
+	margin-left: 10px;
+}
+.input_form label {
+	display: inline-block;
+	width: 80px;
+}
+.project .feild {
+	display: inline-block;
+	width: 60px;
+}
+.project .value {
+	margin-left: 10px;
+}
