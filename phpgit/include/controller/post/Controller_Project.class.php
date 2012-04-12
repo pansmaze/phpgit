@@ -37,6 +37,13 @@ class Project extends Base
 
 	public function add()
 	{
+		if (!isset($_POST['name']))
+		{
+			echo 'operating fail';
+			exit;
+		} else if (0 == preg_match("/\w*\.git$/", $_POST['name'])) {
+			$_POST['name'] .= '.git';
+		}
 		if ($this->p_model->add($_POST))
 		{
 			echo 'add success!';

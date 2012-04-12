@@ -29,7 +29,7 @@
 				{if 'charset'==$key}
 				<select name="charset">
 					<option value="utf-8"{if 'utf-8'==$val} selected="selected"{/if}>utf-8</option>
-					<option value="GBK"{if 'utf-8'==$val} selected="selected"{/if}>GBK</option>
+					<option value="GBK"{if 'GBK'==$val} selected="selected"{/if}>GBK</option>
 				</select>
 				{else}
 				<input name="{$key}" type="text" value="{$val}" />

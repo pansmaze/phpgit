@@ -20,7 +20,6 @@
 		<p><label>只读地址</label>:<input name="cloneurl" type="text" /></p>
 		<p><label>可写地址</label>:<input name="pushurl" type="text" /></p>
 		<p><label>项目编码</label>:<select name="charset"><option value="utf-8">utf-8</option><option value="GBK" selected="selected">GBK</option></select></p>
-		<p><label>gid</label>:<input name="gid" type="text" /></p>
 		<input type="submit" value="submit" />
 	</form>
 </div>

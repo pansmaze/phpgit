@@ -90,5 +90,29 @@ class ProjectsExport extends BaseExport
 		return parent::real_delete("id='$id'");
 	}
 
+	/**
+	 * add
+	 *
+	 * Add a single record
+	 *
+	 * @return ret bool
+	 */
+	public function add($array_data)
+	{
+		if (!isset($array_data['name']))
+		{
+			return false;
+		} else {
+			$name = $array_data['name'];
+			$ret = parent::fetch_one("name='$name'");
+			if (!empty($ret))
+			{
+				return false;
+			}
+		}
+		
+		return parent::add($array_data);
+	}
+
 
 }
