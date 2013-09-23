@@ -14,7 +14,7 @@
  * projectroot
  * Full directory on server where projects are located
  */
-$gitphp_conf['projectroot'] = 'D:\\projects\\web_git_server\\phpgit\\';
+$gitphp_conf['projectroot'] = '/home/git/repositories/';
 
 
 
@@ -38,7 +38,7 @@ $gitphp_conf['projectroot'] = 'D:\\projects\\web_git_server\\phpgit\\';
 
 
 $gitphp_conf['debug'] = false;
-$gitphp_conf['gitbin'] = 'C:\\Progra~1\\Git\\bin\\git.exe';
+$gitphp_conf['gitbin'] = '/usr/bin/git';
 $gitphp_conf['geshi'] = true;
 $gitphp_conf['locale'] = 'en_US';
 $gitphp_conf['encoding'] = 'GBK';

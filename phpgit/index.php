@@ -57,7 +57,7 @@ require_once(GITPHP_GITOBJECTDIR . 'Archive.class.php');
 require_once(GITPHP_GITOBJECTDIR . 'GitExe.class.php');
 require_once(GITPHP_GITOBJECTDIR . 'DiffExe.class.php');
 
-date_default_timezone_set('UTC');
+//date_default_timezone_set('UTC');
 
 
 /*
